@@ -1,26 +1,30 @@
-* root kasutajana:
+* Root kasutajana:
 installi - apt-get install git
-* tavakasutajana:
+* Tavakasutajana:
 esmakordselt:
 
-a) seadista - määra sautajanimi, email, editor
+a) Seadista - määra sautajanimi, email, editor
 git config --global user.name "Ees Perenimi"
 git config --global user.email kasutaja@nimi
 git config --global core.editor nano
 
-b)loo kataloog, kus hakkad skriptima
+b) Loo kataloog, kus hakkad skriptima
 mkdir skriptimine
 
-c) sisene antud kausta
+c) Sisene antud kausta
 cd skriptimine
 
-d) tekita lokaalne repositoorium git süsteemi jaoks antud kaustas
+d) Tekita lokaalne repositoorium git süsteemi jaoks antud kaustas
 git init
 
-remote seadistamine:
-e) git remote add nimi github:address
+Remote seadistamine:
+e) Git remote add nimi github:address
 git remote add skriptimine git@github.com:kasutajanimi/reponimi.git
 
-f)git remote kontroll
+f) Git remote kontroll
 git remote -v
 
+Põhikasutamine:
+
+g) pane fail jälgimisele:
+git add failinimi
