@@ -13,4 +13,4 @@ echo "Current Time: $current_time"
 echo
 
 # Display the calendar with the current date highlighted
-cal | awk -v d="$(date +"%e")" '{gsub(" '$d' ", " \033[1;37;41m'$d'\033[0m ")}1'
+cal
