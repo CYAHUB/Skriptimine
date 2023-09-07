@@ -1,0 +1,12 @@
+#!/bin/bash
+# See skript väljastab masina tööaja.
+
+# Kasutame käsku 'uptime', et saada serveri tööaegaga seotud info
+uptime_info=$(uptime)
+
+# Kasutame käsku 'hostname', et saada masina nimi
+hostname_info=$(hostname)
+
+# Väljastame info masina nime ja tööaja kohta
+echo "Skriptimine at $(date +"%T") up $(echo "$uptime_info" | cut -d ' ' -f 4-)"
+
