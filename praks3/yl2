@@ -1,0 +1,28 @@
+#!/bin/bash
+# See skript otsib /var kaustast .log lõpuga failid,
+# kontrollib nende ridade arvu ning väljastab need kahanemisjärjekorras ridade arvu alusel.
+
+# Määra otsitav kaust
+kaust="/var"
+
+# Otsi kõik .log lõpuga failid /var kaustast
+logs=($(find "$kaust" -type f -name "*.log"))
+
+# Kontrolli iga faili ridade arvu ja salvesta see massiivi
+declare -A line_count_map
+
+for log_file in "${logs[@]}"; do
+  line_count=$(wc -l < "$log_file")
+  line_count_map["$log_file"]=$line_count
+done
+
+# Sorteeri failid kahanemisjärjekorras ridade arvu alusel
+sorted_logs=($(for log_file in "${logs[@]}"; do
+  echo "$log_file ${line_count_map["$log_file"]}"
+done | sort -k2,2nr | awk '{print $1}'))
+
+# Väljasta failide nimekiri
+echo "Failide nimekiri kahanemisjärjekorras ridade arvu alusel:"
+for log_file in "${sorted_logs[@]}"; do
+  echo "$log_file"
+done
