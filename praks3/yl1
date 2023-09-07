@@ -1,0 +1,16 @@
+#!/bin/bash
+# This script displays the current date, time, and a calendar with the current date highlighted.
+
+# Get the current date
+current_date=$(date +"%A, %B %d, %Y")  # Full weekday, month, day, and year
+
+# Get the current time in 24-hour format
+current_time=$(date +"%H:%M:%S")  # 24-hour format
+
+# Print the current date and time
+echo "Current Date: $current_date"
+echo "Current Time: $current_time"
+echo
+
+# Display the calendar with the current date highlighted
+cal | awk -v d="$(date +"%e")" '{gsub(" '$d' ", " \033[1;37;41m'$d'\033[0m ")}1'
