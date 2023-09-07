@@ -1,0 +1,14 @@
+#!/bin/bash
+# See skript küsib kasutajalt nende täisnime ja tervitab neid.
+
+# Küsi kasutajalt eesnime
+echo -n "Palun sisestage oma eesnimi: "
+read eesnimi
+
+# Küsi kasutajalt perenime
+echo -n "Palun sisestage oma perenimi: "
+read perenimi
+
+#Tervita kasutajat sisestatud nime põhjal
+echo "Tere, $eesnimi $perenimi! Tere tulemast."
+
