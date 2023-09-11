@@ -1,0 +1,16 @@
+#!/bin/bash
+# See skript arvutab ringi pindala ja ümbermõõdu kasutaja sisestatud raadiuse põhjal.
+
+# Küsi kasutajalt ringi raadius sentimeetrites
+echo -n "Sisesta oma ringi raadius (sentimeetrites): "
+read raadius
+
+# Arvuta ringi pindala
+pindala=$(echo "scale=2; 3.14159 * ($raadius * $raadius)" | bc)
+
+# Arvuta ringi ümbermõõt
+umbermoot=$(echo "scale=2; 2 * 3.14159 * $raadius" | bc)
+
+# Väljasta tulemused
+echo "Sinu ringi pindala on $pindala ruutsentimeetrit ja ümbermõõt on $umbermoot cm."
+

@@ -1,0 +1,24 @@
+#!/bin/bash
+# See skript loob kataloogi ./test/ ja teeb sellest varukoopia.
+
+# Loome testi ja backup kataloogid, kui neid pole juba olemas
+mkdir -p ./test/
+mkdir -p ./backup/
+
+# Loome 4 mitte-tühja faili test kataloogis
+echo "See on esimene testfail" > ./test/lol.txt
+echo "See on teine testfail" > ./test/you.txt
+echo "See on kolmas testfail" > ./test/are.txt
+echo "See on neljas testfail" > ./test/gay.txt
+
+# Loome 2 mitte-tühja kataloogi test kataloogis
+mkdir ./test/Kaust
+echo "See on esimene alamkataloog" > ./test/Kaust/heh.txt
+mkdir ./test/Kaust2
+echo "See on teine alamkataloog" > ./test/Kaust2/gay.txt
+
+# Tehakse varukoopia (backup) test kataloogist
+tar -czvf ./backup/test.backup.tar.gz ./test/
+
+echo "Backup on loodud ja asub ./backup/test.backup.tar.gz."
+

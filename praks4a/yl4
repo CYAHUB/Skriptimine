@@ -1,0 +1,23 @@
+#!/bin/bash
+# See skript teeb varukoopia kasutaja valitud kataloogist ja salvestab selle kujul "katalooginimi.backup.tar.gz" kausta "backup".
+
+# Küsi kasutajalt kataloogi nime, millest teha varukoopia
+echo -n "Sisesta kataloogi nimi, millest soovid varukoopiat teha: "
+read kataloogi_nimi
+
+# Kontrollime, kas sisestatud kataloog eksisteerib
+if [ -d "$kataloogi_nimi" ]; then
+  # Varukoopia nimi koos kataloogi nimega
+  backup_nimi="${kataloogi_nimi##*/}.backup.tar.gz"
+
+  # Tee kaust "backup", kui see puudub
+  mkdir -p backup
+
+  # Tee varukoopia valitud kataloogist ja salvesta see kausta "backup"
+  tar -czvf "backup/$backup_nimi" "$kataloogi_nimi"
+
+  echo "Varukoopia kataloogist '$kataloogi_nimi' on loodud ja asub 'backup/$backup_nimi'."
+else
+  echo "Viga: Kataloogi '$kataloogi_nimi' ei leitud."
+fi
+
