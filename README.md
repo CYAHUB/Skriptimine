@@ -5,3 +5,5 @@ lol
 # Skriptimine Episode 3
 lol
 # Skriptimine Episode 4
+lol
+# Skriptimine Episode 4.a
