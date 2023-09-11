@@ -12,7 +12,7 @@ echo "Tere tulemast, $nimi!"
 echo -n "Sisesta oma sünniaasta: "
 read synniaasta
 
-# Arvuta kasutaja vanus
+# Arvuta kasutaja vanus.
 current_year=$(date +"%Y")
 vanus=$((current_year - synniaasta))
 
