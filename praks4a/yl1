@@ -1,0 +1,20 @@
+#!/bin/bash
+# See skript küsib kasutajalt nime ja sünniaastat, tervitab teda ning arvutab tema vanuse.
+
+# Küsi kasutajalt nime
+echo -n "Sisesta oma nimi: "
+read nimi
+
+# Tervita kasutajat nime põhjal
+echo "Tere tulemast, $nimi!"
+
+# Küsi kasutajalt sünniaastat
+echo -n "Sisesta oma sünniaasta: "
+read synniaasta
+
+# Arvuta kasutaja vanus
+current_year=$(date +"%Y")
+vanus=$((current_year - synniaasta))
+
+# Väljasta vanus
+echo "$nimi, sina oled $vanus aastat vana."

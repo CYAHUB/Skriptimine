@@ -1,0 +1,17 @@
+#!/bin/bash
+# See skript loob muutujad aasta, president ja lause_keskosa ning väljastab nendest moodustatud lause.
+
+# Loome muutuja aasta ja määratleme selle väärtuseks 2021
+aasta=2021
+
+# Loome muutuja president ja määratleme selle väärtuseks "Alar Karis"
+president="Alar Karis"
+
+# Loome muutuja lause_keskosa ja määratleme selle väärtuseks ". aastal valiti Eesti presidendiks "
+lause_keskosa=". aastal valiti Eesti presidendiks "
+
+# Moodustame lause muutujate abil
+lause="$aasta$lause_keskosa$president"
+
+# Väljastame moodustatud lause
+echo "$lause"
