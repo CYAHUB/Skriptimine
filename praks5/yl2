@@ -1,0 +1,23 @@
+#!/bin/bash
+# See skript küsib kasutajalt kolmnurga külgede väärtused ja arvutab kolmnurga pindala Heroni valemiga.
+
+# Küsi kasutajalt esimese külje väärtust
+echo -n "Sisesta esimese külje väärtus: "
+read kylg1
+
+# Küsi kasutajalt teise külje väärtust
+echo -n "Sisesta teise külje väärtus: "
+read kylg2
+
+# Küsi kasutajalt kolmanda külje väärtust
+echo -n "Sisesta kolmanda külje väärtus: "
+read kylg3
+
+# Arvuta poolümbermõõt
+poolymbermoot=$(echo "scale=2; ($kylg1 + $kylg2 + $kylg3) / 2" | bc)
+
+# Arvuta pindala Heroni valemi abil
+pindala=$(echo "sqrt($poolymbermoot * ($poolymbermoot - $kylg1) * ($poolymbermoot - $kylg2) * ($poolymbermoot - $kylg3))" | bc)
+
+# Väljasta tulemus koos selgitava kirjeldusega
+echo "Kolmnurga pindala, mille küljed on $kylg1, $kylg2 ja $kylg3, on $pindala ruutühikut."

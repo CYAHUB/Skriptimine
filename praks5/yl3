@@ -1,0 +1,25 @@
+#!/bin/bash
+# See skript küsib kasutajalt reisi alguspäeva numbri ja majutuse pikkuse ning arvutab, mitmel nädalapäeval tagasi tullakse.
+
+# Küsi kasutajalt reisi alguspäeva numbrit
+echo -n "Sisesta reisi alguspäeva number (0-6, kus 0 on pühapäev ja 6 on laupäev): "
+read alguspaev
+
+if [ "$alguspaev" -ge 0 ] && [ "$alguspaev" -le 6 ]; then
+	# Küsi kasutajalt majutuse pikkust öödes
+	echo -n "Sisesta majutuse pikkus öödes: "
+	read majutuse_pikkus
+
+	test=$(echo "$alguspaev + $majutuse_pikkus")
+	# Arvuta tagasituleku päev
+	tagasituleku_paev=$(echo "$test % 7" | bc)
+
+	# Defineeri nädalapäevad (optional)
+	nadalapaevad=("Pühapäev" "Esmaspäev" "Teisipäev" "Kolmapäev" "Neljapäev" "Reede" "Laupäev")
+
+	# Väljasta tulemus (optional opinion
+	echo "Tagasi tullakse nädalapäeval ${nadalapaevad[$tagasituleku_paev]}."
+	echo "Tagasituleku_paev: $tagasituleku_paev"
+else
+	echo "Viga: Palun sisestage kehtiv reisi alguspäeva numer (0-6)!"
+fi

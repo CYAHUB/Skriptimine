@@ -1,0 +1,17 @@
+#!/bin/bash
+# See skript küsib kasutajalt täisnurkse kolmnurga kahe külje väärtused ja arvutab hüpotenuusi.
+
+# Küsi kasutajalt esimese külje väärtust
+echo -n "Sisesta esimese külje väärtus: "
+read kylg1
+
+# Küsi kasutajalt teise külje väärtust
+echo -n "Sisesta teise külje väärtus: "
+read kylg2
+
+# arvuta hüpotenuus kasutades Pytagorase teoreemi
+hupotenuus=$(echo "sqrt($kylg1^2 + $kylg2^2)" | bc)
+
+# Väljasta tulems koos selgitava kirjeldusega
+echo "Täisnurkse kolmnurga hüpotenuus, milles esimene külg on $kylg1 ja teine külg on $kylg2, on $hupotenuus."
+
