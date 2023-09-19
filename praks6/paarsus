@@ -1,0 +1,18 @@
+#!/bin/bash
+# See skript kontrollib, kas antud arv on paaris või paaritu.
+
+if [ $# -ne 1 ]; then
+    echo "Kasutamine: $0 <täisarv>"
+    exit 1
+fi
+
+arv=$1
+
+arvutus=$(echo "$arv % 2" | bc)
+
+if [ $arvutus -eq 0 ]; then
+    echo "Antud arv $arv on paaris."
+else
+    echo "Antud arv $arv on paaritu."
+fi
+

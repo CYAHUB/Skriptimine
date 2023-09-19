@@ -1,0 +1,41 @@
+#!/bin/bash
+#
+
+
+echo "1. Windows 7"
+echo "2. Windows 10"
+echo "3. Windows 11"
+
+echo -n "Select your OS choice [1-3]? "
+read win
+
+if [[ $win -eq 1 ]] ; then
+        echo "You choosed Windows 7"
+        echo "You really liked windows 7 do you?"
+elif [[ $win -eq 2 ]] ; then
+                echo "You choosed Windows 10"
+                echo "You are normal"
+elif [[ $win -eq 3 ]] ; then
+                echo "You choosed Windows 11"
+                echo "What is wrong with you?"
+	else
+              echo "Man... What do you mean you don't want to choose any of these Windowses?"
+              echo "Alright... You can choose what OS so what is it?"
+              echo -n "Please choose your own OS. "
+               read os
+               if [[ $os ]] ; then
+                        echo "So you chose $os?"
+                        echo "Am i correct?"
+                        echo -n "Select 1 for yes or 2 for no? "
+                        read correct
+                        if [[ $correct -eq 1 ]] ; then
+                                echo "Well alright my man!"
+                        else
+                                echo "Bruh"
+                        fi
+		else
+                echo "Man you don't even want now to choose aswell..."
+                echo "Shame on you!"
+	fi
+
+fi

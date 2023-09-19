@@ -1,0 +1,17 @@
+#!/bin/bash
+# See programm küsib suvalist arvu ja skript peab ütlema kas on paaris või paaritu
+
+echo -n "Sisestage suvaline täisarv: "
+read arv
+
+arvutus=$(echo "$arv % 2" | bc)
+
+if  [ $arvutus == 0 ]
+then
+	echo "Antud arv on paaris"
+else
+	echo "Antud arv on paaritu"
+fi
+
+
+#echo "$arvutus"

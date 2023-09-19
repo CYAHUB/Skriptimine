@@ -1,0 +1,25 @@
+#!/bin/bash
+# See skript aitab bussiekskursioonide korraldajal arvutada, mitu bussitäit reisijaid on grupis ja mitu inimest on maha jäänud.
+
+# Küsi kasutajalt reisijate arvu grupis
+echo -n "Sisesta reisijate arv grupis: "
+read reisijate_arv
+
+# Küsi kasutajalt bussi kohtade arvu
+echo -n "Sisesta bussi kohtade arv: "
+read bussi_kohad
+
+# Arvuta, mitu bussitäit reisijaid on grupis ja mitu inimest on maha jäänud
+busside_arv=$((reisijate_arv / bussi_kohad))
+mahajaanud=$((reisijate_arv % bussi_kohad))
+echo "Busside_Arv = $busside_arv"
+# Väljasta tulemus
+if test $mahajaanud -gt 0
+then
+	busside_arv=$(($busside_arv + 1))
+fi
+
+echo "Busside_Arv = $busside_arv"
+echo "mahajaanud = $mahajaanud"
+echo "Busse on vaja $busside_arv, et täita vähemalt $reisijate_arv inimesi."
+
